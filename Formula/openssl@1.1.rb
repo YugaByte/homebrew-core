@@ -62,7 +62,7 @@ class OpensslAT11 < Formula
     if MacOS.prefer_64_bit? && OS.mac?
       arch_args = %w[darwin64-x86_64-cc enable-ec_nistp_64_gcc_128]
     elsif MacOS.prefer_64_bit? && OS.linux?
-      arch_args = %w[linux-x86_64]
+      arch_args = %w[linux-x86_64 -march=ivybridge]
     elsif OS.mac?
       arch_args = %w[darwin-i386-cc]
     elsif OS.linux?
