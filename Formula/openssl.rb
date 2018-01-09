@@ -41,7 +41,8 @@ class Openssl < Formula
   def arch_args
     return {
       :i386 => %w[linux-generic32],
-      :x86_64 => %w[linux-x86_64 -march=ivybridge],
+      :x86_64 => %w[linux-x86_64
+                    -march=ivybridge -mno-avx -mno-bmi -mno-bmi2 -mno-fma -no-abm -no-movbe],
       :arm => %w[linux-armv4],
     } if OS.linux?
 
